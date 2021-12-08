@@ -1,0 +1,31 @@
+{
+  "projects" : [
+    {
+      "title": "Nourish",
+      "subtitle": "mobile app",
+      "tags": ["react native", "expo"],
+      "description": "plant watering app",
+      "link": "",
+      "sourceCode": "",
+      "image": ""
+    },
+    {
+      "title": "Sonora",
+      "subtitle": "web app",
+      "tags": ["react", "bootstrap", "s3"],
+      "description": "collaborative soundboard app",
+      "link": "",
+      "sourceCode": "",
+      "image": ""
+    },
+    {
+      "title": "Yellowpages",
+      "subtitle": "web app",
+      "tags": ["react", "express", "mongodb", "node"],
+      "description": "contact listing app",
+      "link": "",
+      "sourceCode": "",
+      "image": ""
+    }
+  ]
+}
