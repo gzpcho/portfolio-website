@@ -1,7 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react';
 
-const MyApp = (props) => {
-  const { Component, pageProps } = props;
+const App = ({ Component, pageProps }) => {
   return (
     <ChakraProvider>
       <Component {...pageProps} />
@@ -9,4 +8,4 @@ const MyApp = (props) => {
   );
 };
 
-export default MyApp;
+export default App;
