@@ -1,31 +1,57 @@
-import { Button } from '@chakra-ui/react';
-import Head from 'next/head';
+import {
+  Button,
+  Stack,
+  Heading,
+  Box,
+  Flex,
+  Spacer,
+  Container,
+  Text,
+} from '@chakra-ui/react';
+
+import { useColorMode } from '@chakra-ui/react';
 import Link from 'next/link';
 
 const Page = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <>
-      <Head>
-        <title>Portfolio</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+    <Container my={4}>
+      <Flex>
+        <Box p="2">
+          <Heading size="md">Hi, I&apos;m Ian</Heading>
+        </Box>
+        <Spacer />
+        <Box>
+          <Link href="/resume.pdf" passHref>
+            <Button
+              as="a"
+              alt="resume"
+              target="_blank"
+              rel="noopener noreferrer"
+              mx={1}
+            >
+              Resume
+            </Button>
+          </Link>
 
-      <Link href="/resume.pdf" passHref>
-        <Button
-          as="a"
-          href="/resume.pdf"
-          alt="resume"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Resume
-        </Button>
-      </Link>
+          <Link href="/projects" passHref>
+            <Button mx={1}>Projects</Button>
+          </Link>
 
-      <Link href="/projects" passHref>
-        <Button>Projects</Button>
-      </Link>
-    </>
+          <Button onClick={toggleColorMode}>
+            Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+          </Button>
+        </Box>
+      </Flex>
+      <Text>
+        Currently working as a{' '}
+        <Text as="p" fontWeight="bold">
+          Computer Science Student
+        </Text>{' '}
+        at <Text fontWeight="bold">Texas State University.</Text>
+      </Text>
+    </Container>
   );
 };
 
