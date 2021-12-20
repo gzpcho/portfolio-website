@@ -1,6 +1,6 @@
 import {
   Button,
-  Stack,
+  Center,
   Heading,
   Box,
   Flex,
@@ -16,41 +16,44 @@ const Page = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Container my={4}>
+    <Container
+      my={4}
+    >
       <Flex>
-        <Box p="2">
-          <Heading size="md">Hi, I&apos;m Ian</Heading>
-        </Box>
+        <Heading p={2} size="md">
+          Hi, I&apos;m Ian
+        </Heading>
         <Spacer />
-        <Box>
-          <Link href="/resume.pdf" passHref>
-            <Button
-              as="a"
-              alt="resume"
-              target="_blank"
-              rel="noopener noreferrer"
-              mx={1}
-            >
-              Resume
-            </Button>
-          </Link>
-
-          <Link href="/projects" passHref>
-            <Button mx={1}>Projects</Button>
-          </Link>
-
-          <Button onClick={toggleColorMode}>
-            Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+        <Link href="/resume.pdf" passHref>
+          <Button
+            as="a"
+            alt="resume"
+            target="_blank"
+            rel="noopener noreferrer"
+            mx={1}
+          >
+            Resume
           </Button>
-        </Box>
+        </Link>
+
+        <Link href="/projects" passHref>
+          <Button mx={1}>Projects</Button>
+        </Link>
+
+        <Button onClick={toggleColorMode}>
+          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+        </Button>
       </Flex>
-      <Text>
-        Currently working as a{' '}
-        <Text as="p" fontWeight="bold">
-          Computer Science Student
-        </Text>{' '}
-        at <Text fontWeight="bold">Texas State University.</Text>
-      </Text>
+
+      <Center pt={4}>
+        <Text>
+          Currently a{' '}
+          <Text as="p" fontWeight="bold">
+            Computer Science Student
+          </Text>{' '}
+          at <Text fontWeight="bold">Texas State University.</Text>
+        </Text>
+      </Center>
     </Container>
   );
 };
